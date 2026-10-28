@@ -1,4 +1,4 @@
-#tituloPrincipal{
+#titulo-pokedex {
     text-align: center;
     font-size: 40px;
 }
@@ -6,11 +6,11 @@ body{
     min-height: 100vh;
     background: linear-gradient(135deg, white 50%, red 50%);
 }
-.busca{
+.busca {
     display: flex;
     justify-content: center;
 }
-.busca input{
+.busca input {
     font-size: 30px;
     border-radius: 7px;
 }
