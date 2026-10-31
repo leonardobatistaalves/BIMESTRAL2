@@ -1,14 +1,15 @@
-<<<<<<< HEAD
-let inputAtalho = document.querySelector('#atalhoDeBusca');
-let botaoDeBusca = document.querySelector('#botaoDeBusca');
+const campoNome = document.querySelector("#escrita-nome");
+const botaoJogar = document.querySelector("#botao-jogar");
 
-botaoDeBusca.addEventListener('click', function(){
-    inputAtalho.value = 
-})
-=======
-let botaoJogarEl = document.querySelector('#botao-jogar');
+botaoJogar.addEventListener("click", () => {
+  const nome = campoNome.value.trim();
 
-botaoJogarEl.addEventListener('click', () => {
-    window.location.href = 'pokedex.html';
+  if (nome === "") {
+    alert("Digite seu nome para jogar.");
+    campoNome.focus();
+    return;
+  }
+
+  localStorage.setItem("nomeJogador", nome);
+  window.location.href = "pokedex.html";
 });
-
