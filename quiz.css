@@ -24,6 +24,7 @@ header {
 }
 
 #caixa-quiz {
+    box-sizing: border-box;
     width: 90%;
     max-width: 480px;
     padding: 30px;
@@ -39,6 +40,67 @@ header {
     margin-top: 0;
 }
 
+#texto-pergunta {
+    font-size: 22px;
+    color: #222;
+}
+
+#opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#opcoes button {
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    background-color: white;
+    border: 3px solid #222;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#opcoes button:hover {
+    background-color: #ffcb05;
+    transform: scale(1.03);
+}
+
+#opcoes button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+#opcoes button:disabled:hover {
+    background-color: white;
+    transform: none;
+}
+
+#opcoes button.certa,
+#opcoes button.certa:hover {
+    opacity: 1;
+    color: white;
+    background-color: #4caf50;
+    border-color: #2e7d32;
+}
+
+#opcoes button.errada,
+#opcoes button.errada:hover {
+    opacity: 1;
+    color: white;
+    background-color: #e53935;
+    border-color: #b71c1c;
+}
+
+#feedback {
+    min-height: 24px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#proxima,
 #jogar-novamente {
     padding: 12px 30px;
     font-size: 18px;
@@ -51,8 +113,25 @@ header {
     transition: 0.3s;
 }
 
+#proxima:hover,
 #jogar-novamente:hover {
     transform: scale(1.1);
+}
+
+#resultado {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#ranking {
+    display: inline-block;
+    margin: 0 0 20px;
+    text-align: left;
+    font-size: 18px;
+}
+
+#ranking li {
+    margin: 6px 0;
 }
 
 footer {
