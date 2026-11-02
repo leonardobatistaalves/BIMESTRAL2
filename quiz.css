@@ -1,0 +1,67 @@
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    background: linear-gradient(180deg, red 48%, black 48%, black 52%, white 52%);
+}
+
+header {
+    text-align: center;
+}
+
+#titulo-quiz {
+    font-size: 48px;
+    color: gold;
+    margin-bottom: 0;
+}
+
+#jogador {
+    font-size: 18px;
+    color: gold;
+}
+
+#caixa-quiz {
+    width: 90%;
+    max-width: 480px;
+    padding: 30px;
+    background: white;
+    border: 16px solid black;
+    border-radius: 60px;
+    text-align: center;
+}
+
+#numero-questao {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+#imagem-pokemon {
+    width: 200px;
+    height: 200px;
+    image-rendering: pixelated;
+}
+
+#jogar-novamente {
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    background-color: #ffcb05;
+    border: 3px solid #222;
+    border-radius: 67px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#jogar-novamente:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+}
