@@ -13,7 +13,7 @@ const perguntas = [
     pergunta: "Qual é o Pokémon número 1 da Pokédex Nacional?",
     opcoes: ["Bulbasaur", "Pikachu", "Charmander"],
     resposta: "Bulbasaur"
-  }
+  },
    {
     pergunta: "Quais são os tipos do Gengar?",
     opcoes: ["Fantasma e Venenoso", "Fantasma e Sombrio", "Venenoso e Psíquico"],
@@ -117,3 +117,69 @@ function embaralhar(lista) {
 }
 
 const perguntasDoJogo = embaralhar(perguntas);
+
+let indicePergunta = 0;
+let acertos = 0;
+
+const progresso = document.querySelector("#progresso");
+const textoPergunta = document.querySelector("#texto-pergunta");
+const opcoes = document.querySelector("#opcoes");
+const feedback = document.querySelector("#feedback");
+const botaoProxima = document.querySelector("#proxima");
+
+function mostrarPergunta() {
+  if (indicePergunta >= perguntasDoJogo.length) {
+    progresso.textContent = "Quiz finalizado!";
+    textoPergunta.textContent =
+      `Você acertou ${acertos} de ${perguntasDoJogo.length} perguntas.`;
+    opcoes.replaceChildren();
+    feedback.textContent = "";
+    botaoProxima.hidden = true;
+    return;
+  }
+
+  const atual = perguntasDoJogo[indicePergunta];
+
+  progresso.textContent =
+    `Pergunta ${indicePergunta + 1} de ${perguntasDoJogo.length}`;
+  textoPergunta.textContent = atual.pergunta;
+  feedback.textContent = "";
+  botaoProxima.hidden = true;
+  opcoes.replaceChildren();
+
+  atual.opcoes.forEach((opcao) => {
+    const botao = document.createElement("button");
+    botao.textContent = opcao;
+
+    botao.addEventListener("click", () => {
+      responder(opcao);
+    });
+
+    opcoes.appendChild(botao);
+  });
+}
+
+function responder(opcaoEscolhida) {
+  const atual = perguntasDoJogo[indicePergunta];
+  const botoes = opcoes.querySelectorAll("button");
+
+  botoes.forEach((botao) => {
+    botao.disabled = true;
+  });
+
+  if (opcaoEscolhida === atual.resposta) {
+    feedback.textContent = "Correto!";
+    acertos++;
+  } else {
+    feedback.textContent = `Não foi dessa vez. A resposta certa é: ${atual.resposta}`;
+  }
+
+  botaoProxima.hidden = false;
+}
+
+botaoProxima.addEventListener("click", () => {
+  indicePergunta++;
+  mostrarPergunta();
+});
+
+mostrarPergunta();
