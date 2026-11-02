@@ -33,16 +33,10 @@ header {
     text-align: center;
 }
 
-#numero-questao {
+#progresso {
     font-size: 18px;
     font-weight: bold;
     margin-top: 0;
-}
-
-#imagem-pokemon {
-    width: 200px;
-    height: 200px;
-    image-rendering: pixelated;
 }
 
 #jogar-novamente {

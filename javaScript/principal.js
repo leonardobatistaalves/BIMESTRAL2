@@ -11,5 +11,5 @@ botaoJogar.addEventListener("click", () => {
   }
 
   localStorage.setItem("nomeJogador", nome);
-  window.location.href = "pokedex.html";
+  window.location.href = "quiz.html";
 });

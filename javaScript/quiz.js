@@ -147,7 +147,7 @@ function mostrarPergunta() {
   botaoProxima.hidden = true;
   opcoes.replaceChildren();
 
-  atual.opcoes.forEach((opcao) => {
+  embaralhar(atual.opcoes).forEach((opcao) => {
     const botao = document.createElement("button");
     botao.textContent = opcao;
 
