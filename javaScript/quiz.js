@@ -14,6 +14,95 @@ const perguntas = [
     opcoes: ["Bulbasaur", "Pikachu", "Charmander"],
     resposta: "Bulbasaur"
   }
+   {
+    pergunta: "Quais são os tipos do Gengar?",
+    opcoes: ["Fantasma e Venenoso", "Fantasma e Sombrio", "Venenoso e Psíquico"],
+    resposta: "Fantasma e Venenoso"
+  },
+  {
+    pergunta: "Quais são os tipos do Lucario?",
+    opcoes: ["Lutador e Aço", "Lutador e Psíquico", "Aço e Sombrio"],
+    resposta: "Lutador e Aço"
+  },
+  {
+    pergunta: "Quais são os tipos do Scizor?",
+    opcoes: ["Inseto e Aço", "Inseto e Voador", "Aço e Elétrico"],
+    resposta: "Inseto e Aço"
+  },
+  {
+    pergunta: "Em qual Pokémon o Rockruff pode evoluir?",
+    opcoes: ["Lycanroc", "Arcanine", "Mightyena"],
+    resposta: "Lycanroc"
+  },
+  {
+    pergunta: "Em qual Pokémon o Gastly evolui?",
+    opcoes: ["Gengar", "Haunter", "Misdreavus"],
+    resposta: "Haunter"
+  },
+  {
+    pergunta: "Como Haunter normalmente evolui para Gengar nos jogos?",
+    opcoes: ["Usando uma Pedra da Lua", "Por troca", "Subindo ao nível 40"],
+    resposta: "Por troca"
+  },
+  {
+    pergunta: "O que é necessário para Riolu evoluir para Lucario?",
+    opcoes: [
+      "Amizade alta durante o dia",
+      "Uma Pedra do Trovão",
+      "Amizade alta durante a noite"
+    ],
+    resposta: "Amizade alta durante o dia"
+  },
+  {
+    pergunta: "Em qual Pokémon Larvitar evolui?",
+    opcoes: ["Pupitar", "Tyranitar", "Bagon"],
+    resposta: "Pupitar"
+  },
+  {
+    pergunta: "Qual é o tipo de golpe que não afeta Pokémon do tipo Fantasma?",
+    opcoes: ["Normal", "Água", "Gelo"],
+    resposta: "Normal"
+  },
+  {
+    pergunta: "Qual destes tipos é super efetivo contra Pokémon do tipo Dragão?",
+    opcoes: ["Fogo", "Gelo", "Elétrico"],
+    resposta: "Gelo"
+  },
+  {
+    pergunta: "Qual destes tipos é uma fraqueza do tipo Psíquico?",
+    opcoes: ["Sombrio", "Fogo", "Água"],
+    resposta: "Sombrio"
+  },
+  {
+    pergunta: "A qual tipo de Pokémon o tipo Fada é imune?",
+    opcoes: ["Dragão", "Fantasma", "Aço"],
+    resposta: "Dragão"
+  },
+  {
+    pergunta: "Em qual região se passam Pokémon Diamond e Pearl?",
+    opcoes: ["Johto", "Sinnoh", "Hoenn"],
+    resposta: "Sinnoh"
+  },
+  {
+    pergunta: "De qual Pokémon foi criado Mewtwo?",
+    opcoes: ["Mew", "Ditto", "Arceus"],
+    resposta: "Mew"
+  },
+  {
+    pergunta: "Em qual Pokémon Eevee evolui ao usar uma Pedra da Folha?",
+    opcoes: ["Leafeon", "Espeon", "Glaceon"],
+    resposta: "Leafeon"
+  },
+  {
+    pergunta: "Quais são os tipos do Flygon?",
+    opcoes: ["Terra e Dragão", "Inseto e Dragão", "Terra e Voador"],
+    resposta: "Terra e Dragão"
+  },
+  {
+    pergunta: "Em qual Pokémon Swablu evolui?",
+    opcoes: ["Altaria", "Pelipper", "Noivern"],
+    resposta: "Altaria"
+  }
 ];
 
 function embaralhar(lista) {
