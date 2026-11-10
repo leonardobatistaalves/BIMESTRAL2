@@ -1,0 +1,19 @@
+#buscaPokedex{
+    border-radius: 20px;
+    font-size: 40px;
+    font-weight: 600;
+    width: 50%; 
+    text-align: center;
+}
+#botao-de-busca{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+body{
+background: linear-gradient(to right, #ffffff, #ff1c1c);
+    background-attachment: fixed; 
+    min-height: 100vh;            
+    margin: 0; 
+}
