@@ -25,3 +25,9 @@ abrirModalEl.addEventListener('click', () => {
 fecharModalEl.addEventListener('click', () => {
   modal.style.display = 'none'
 })
+
+let btnPokedex = document.querySelector('#btn-pokedex');
+
+btnPokedex.addEventListener('click', () => {
+  window.location.href = 'pokedex.html';
+})
