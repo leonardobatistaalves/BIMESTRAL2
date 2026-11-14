@@ -214,6 +214,17 @@ botaoProxima.addEventListener("click", () => {
   mostrarPergunta();
 });
 
+const abrirMenu = document.querySelector('#btn-pokedex');
+const janelaPokedex = document.querySelector('#janela-pokedex');
+const fecharMenu = document.querySelector('#fechar-menu');
+
+abrirMenu.addEventListener('click', () => {
+  janelaPokedex.classList.toggle('ativo');
+});
+
+fecharMenu.addEventListener('click', () => {
+  janelaPokedex.classList.remove('ativo');
+});
 botaoJogarNovamente.addEventListener("click", () => {
   window.location.reload();
 });
