@@ -1,3 +1,4 @@
+
 const perguntas = [
   {
     pergunta: "Qual é o tipo do Pikachu?",
@@ -14,7 +15,7 @@ const perguntas = [
     opcoes: ["Bulbasaur", "Pikachu", "Charmander"],
     resposta: "Bulbasaur"
   },
-   {
+  {
     pergunta: "Quais são os tipos do Gengar?",
     opcoes: ["Fantasma e Venenoso", "Fantasma e Sombrio", "Venenoso e Psíquico"],
     resposta: "Fantasma e Venenoso"
@@ -46,11 +47,7 @@ const perguntas = [
   },
   {
     pergunta: "O que é necessário para Riolu evoluir para Lucario?",
-    opcoes: [
-      "Amizade alta durante o dia",
-      "Uma Pedra do Trovão",
-      "Amizade alta durante a noite"
-    ],
+    opcoes: ["Amizade alta durante o dia", "Uma Pedra do Trovão", "Amizade alta durante a noite"],
     resposta: "Amizade alta durante o dia"
   },
   {
@@ -102,8 +99,109 @@ const perguntas = [
     pergunta: "Em qual Pokémon Swablu evolui?",
     opcoes: ["Altaria", "Pelipper", "Noivern"],
     resposta: "Altaria"
+  },
+  {
+    pergunta: "Qual Pokémon acompanha Ash em suas aventuras?",
+    opcoes: ["Charmander", "Pikachu", "Bulbasaur"],
+    resposta: "Pikachu"
+  },
+  {
+    pergunta: "Qual Pokémon lendário está associado aos oceanos?",
+    opcoes: ["Groudon", "Rayquaza", "Kyogre"],
+    resposta: "Kyogre"
+  },
+  {
+    pergunta: "Em qual Pokémon Charmander evolui?",
+    opcoes: ["Charmeleon", "Charizard", "Dragonite"],
+    resposta: "Charmeleon"
+  },
+  {
+    pergunta: "Qual Pokémon evolui ao usar uma Pedra do Trovão em Pikachu?",
+    opcoes: ["Jolteon", "Raichu", "Electabuzz"],
+    resposta: "Raichu"
+  },
+  {
+    pergunta: "Qual Pokémon lendário controla o tempo?",
+    opcoes: ["Dialga", "Palkia", "Giratina"],
+    resposta: "Dialga"
+  },
+  {
+    pergunta: "Qual Pokémon lendário controla o espaço?",
+    opcoes: ["Arceus", "Dialga", "Palkia"],
+    resposta: "Palkia"
+  },
+  {
+    pergunta: "Qual Pokémon é famoso por dormir muito?",
+    opcoes: ["Slaking", "Snorlax", "Slowbro"],
+    resposta: "Snorlax"
+  },
+  {
+    pergunta: "Qual é a evolução final do Squirtle?",
+    opcoes: ["Wartortle", "Blastoise", "Feraligatr"],
+    resposta: "Blastoise"
+  },
+  {
+    pergunta: "Qual Pokémon consegue se transformar em outros Pokémon?",
+    opcoes: ["Ditto", "Zoroark", "Mewtwo"],
+    resposta: "Ditto"
+  },
+  {
+    pergunta: "Quais são os tipos do Charizard?",
+    opcoes: ["Fogo e Dragão", "Fogo e Voador", "Fogo e Terra"],
+    resposta: "Fogo e Voador"
+  },
+  {
+    pergunta: "Qual Pokémon evolui para Lucario?",
+    opcoes: ["Riolu", "Machop", "Mienfoo"],
+    resposta: "Riolu"
+  },
+  {
+    pergunta: "Qual Pokémon é considerado o criador do universo Pokémon?",
+    opcoes: ["Mewtwo", "Arceus", "Rayquaza"],
+    resposta: "Arceus"
+  },
+  {
+    pergunta: "Qual é o número do Pikachu na Pokédex Nacional?",
+    opcoes: ["025", "026", "035"],
+    resposta: "025"
+  },
+  {
+    pergunta: "Quais são os tipos do Greninja?",
+    opcoes: ["Água e Sombrio", "Água e Lutador", "Água e Psíquico"],
+    resposta: "Água e Sombrio"
+  },
+  {
+    pergunta: "Qual Pokémon evolui para Dragonite?",
+    opcoes: ["Dratini", "Dragonair", "Bagon"],
+    resposta: "Dragonair"
+  },
+  {
+    pergunta: "Qual Pokémon lendário está associado aos sonhos?",
+    opcoes: ["Darkrai", "Cresselia", "Lugia"],
+    resposta: "Cresselia"
+  },
+  {
+    pergunta: "Qual Pokémon lendário está associado ao mundo da distorção?",
+    opcoes: ["Giratina", "Dialga", "Palkia"],
+    resposta: "Giratina"
+  },
+  {
+    pergunta: "Qual é o tipo do Pokémon Mewtwo?",
+    opcoes: ["Psíquico", "Fantasma", "Sombrio"],
+    resposta: "Psíquico"
+  },
+  {
+    pergunta: "Qual é a evolução de Torchic?",
+    opcoes: ["Blaziken", "Combusken", "Monferno"],
+    resposta: "Combusken"
+  },
+  {
+    pergunta: "Qual Pokémon lendário representa a terra e os continentes?",
+    opcoes: ["Kyogre", "Groudon", "Rayquaza"],
+    resposta: "Groudon"
   }
 ];
+
 
 function embaralhar(lista) {
   const copia = [...lista];
