@@ -11,5 +11,17 @@ botaoJogar.addEventListener("click", () => {
   }
 
   localStorage.setItem("nomeJogador", nome);
-  window.location.href = "pokedex.html";
+  window.location.href = "quiz.html";
 });
+
+let abrirModalEl = document.querySelector('#abrir-modal');
+let fecharModalEl = document.querySelector('#fechar-modal');
+let modal = document.querySelector('#modal');
+
+abrirModalEl.addEventListener('click', () => {
+  modal.style.display = 'flex';
+})
+
+fecharModalEl.addEventListener('click', () => {
+  modal.style.display = 'none'
+})

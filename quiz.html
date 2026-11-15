@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="icon" href="favicon/pokebola.icon.webp">
+    <title>PokeQuiz</title>
+</head>
+<body>
+    <header>
+        <h1 id="titulo-quiz">PokeQuiz</h1>
+        <h2 id="jogador"></h2>
+    </header>
+
+    <main id="caixa-quiz">
+        <div id="tela-quiz">
+            <p id="progresso"></p>
+            <h2 id="texto-pergunta"></h2>
+            <div id="opcoes"></div>
+            <p id="feedback"></p>
+            <button id="proxima" hidden>Próxima</button>
+        </div>
+
+        <div id="tela-fim" hidden>
+            <p id="resultado"></p>
+            <h3>Ranking</h3>
+            <ol id="ranking"></ol>
+            <button id="jogar-novamente">JOGAR NOVAMENTE</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Projeto feito por alunos CEFET-MG</p>
+           <div id="pokedex">
+            <button id="btn-pokedex">Pokédex</button>
+            <div id="janela-pokedex">
+                <button id="fechar-menu">X</button>
+                <h3>Pokedex</h3>
+                <p>Bem vindo, Treinador!</p>
+                <form id="form-pokedex">
+                    <input type="search" id="busca-pokemon">
+                    <button type="submit">Buscar</button>
+                </form>
+            <div id="resultado-pokemon"></div>
+            </div>
+        </div>    
+    </footer>
+
+    <script src="javaScript/quiz.js"></script>
+</body>
+</html>

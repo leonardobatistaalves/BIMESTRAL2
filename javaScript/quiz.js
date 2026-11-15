@@ -126,15 +126,41 @@ const textoPergunta = document.querySelector("#texto-pergunta");
 const opcoes = document.querySelector("#opcoes");
 const feedback = document.querySelector("#feedback");
 const botaoProxima = document.querySelector("#proxima");
+const jogador = document.querySelector("#jogador");
+const telaQuiz = document.querySelector("#tela-quiz");
+const telaFim = document.querySelector("#tela-fim");
+const resultado = document.querySelector("#resultado");
+const listaRanking = document.querySelector("#ranking");
+const botaoJogarNovamente = document.querySelector("#jogar-novamente");
+
+jogador.textContent = `Treinador: ${localStorage.getItem("nomeJogador")}`;
+
+function terminarQuiz() {
+  const ranking = JSON.parse(localStorage.getItem("ranking")) || [];
+
+  ranking.push({
+    nome: localStorage.getItem("nomeJogador"),
+    pontos: acertos
+  });
+  ranking.sort((a, b) => b.pontos - a.pontos);
+  localStorage.setItem("ranking", JSON.stringify(ranking));
+
+  telaQuiz.hidden = true;
+  telaFim.hidden = false;
+  resultado.textContent =
+    `Você acertou ${acertos} de ${perguntasDoJogo.length} perguntas.`;
+
+  listaRanking.replaceChildren();
+  ranking.slice(0, 5).forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = `${item.nome}: ${item.pontos} pontos`;
+    listaRanking.appendChild(li);
+  });
+}
 
 function mostrarPergunta() {
   if (indicePergunta >= perguntasDoJogo.length) {
-    progresso.textContent = "Quiz finalizado!";
-    textoPergunta.textContent =
-      `Você acertou ${acertos} de ${perguntasDoJogo.length} perguntas.`;
-    opcoes.replaceChildren();
-    feedback.textContent = "";
-    botaoProxima.hidden = true;
+    terminarQuiz();
     return;
   }
 
@@ -147,7 +173,7 @@ function mostrarPergunta() {
   botaoProxima.hidden = true;
   opcoes.replaceChildren();
 
-  atual.opcoes.forEach((opcao) => {
+  embaralhar(atual.opcoes).forEach((opcao) => {
     const botao = document.createElement("button");
     botao.textContent = opcao;
 
@@ -165,6 +191,12 @@ function responder(opcaoEscolhida) {
 
   botoes.forEach((botao) => {
     botao.disabled = true;
+
+    if (botao.textContent === atual.resposta) {
+      botao.classList.add("certa");
+    } else if (botao.textContent === opcaoEscolhida) {
+      botao.classList.add("errada");
+    }
   });
 
   if (opcaoEscolhida === atual.resposta) {
@@ -182,4 +214,59 @@ botaoProxima.addEventListener("click", () => {
   mostrarPergunta();
 });
 
+const abrirMenu = document.querySelector('#btn-pokedex');
+const janelaPokedex = document.querySelector('#janela-pokedex');
+const fecharMenu = document.querySelector('#fechar-menu');
+
+abrirMenu.addEventListener('click', () => {
+  janelaPokedex.classList.toggle('ativo');
+});
+
+fecharMenu.addEventListener('click', () => {
+  janelaPokedex.classList.remove('ativo');
+});
+botaoJogarNovamente.addEventListener("click", () => {
+  window.location.reload();
+});
+
 mostrarPergunta();
+
+const formPokedex = document.querySelector('#form-pokedex');
+const buscaPokemon = document.querySelector('#busca-pokemon');
+const resultadoPokemon = document.querySelector('#resultado-pokemon');
+
+async function buscarPokemon(nome) {
+  resultadoPokemon.textContent = 'Carregando...';
+
+  const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nome}`);
+
+  if (!resposta.ok) {
+    resultadoPokemon.textContent = 'Pokémon não encontrado!';
+    return;
+  }
+
+  const dados = await resposta.json();
+
+  let tipos = '';
+  for (let i = 0; i < dados.types.length; i++) {
+    const nomeTipo = dados.types[i].type.name;
+    tipos = tipos + `<span class="tipo ${nomeTipo}">${nomeTipo}</span>`;
+  }
+
+  resultadoPokemon.innerHTML = `
+   <img src="${dados.sprites.front_default}" alt="${dados.name}">
+   <h4>#${dados.id} ${dados.name}</h4>
+   <p>${tipos}</p>
+   <p>Altura: ${dados.height / 10} m</p>
+   <p>Peso: ${dados.weight / 10} kg</p>
+  `;
+}
+
+formPokedex.addEventListener('submit', (evento) => {
+  evento.preventDefault();
+  const nome = buscaPokemon.value.toLowerCase();
+
+  if (nome !== '') {
+    buscarPokemon(nome);
+  }
+});

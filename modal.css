@@ -1,0 +1,62 @@
+.autores{
+    margin: 0;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 25px;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.titulos-autores{
+    font-size: 30px;
+    margin: 0;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.paragrafo-autores{
+    font-size: 20px;
+    margin-top: -10px;
+    margin-left: 15px;
+    grid-column: 2;
+    grid-row: 2;
+    text-align: justify;
+}
+
+.img-autores{
+    width: 150px;
+    border-radius: 20px;
+    margin: 10px;
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+#modal{
+    display: none;
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow-y: auto;
+    border-radius: 20px;
+    background-color: rgb(233, 191, 40);
+    scrollbar-width: none;
+}
+
+#abrir-modal{
+    border-radius: 100%;
+}
+
+#fechar-modal{
+    border-radius: 100%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
