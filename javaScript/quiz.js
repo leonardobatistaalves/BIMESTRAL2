@@ -249,18 +249,16 @@ async function buscarPokemon(nome) {
 
   let tipos = '';
   for (let i = 0; i < dados.types.length; i++) {
-    if (i > 0) {
-      tipos = tipos + ', ';
-    }
-    tipos = tipos + dados.types[i].type.name;
+    const nomeTipo = dados.types[i].type.name;
+    tipos = tipos + `<span class="tipo ${nomeTipo}">${nomeTipo}</span>`;
   }
 
   resultadoPokemon.innerHTML = `
-    <img src="${dados.sprites.front_default}" alt="${dados.name}">
-    <h4>#${dados.id} ${dados.name}</h4>
-    <p>Tipo: ${tipos}</p>
-    <p>Altura: ${dados.height / 10} m</p>
-    <p>Peso: ${dados.weight / 10} kg</p>
+   <img src="${dados.sprites.front_default}" alt="${dados.name}">
+   <h4>#${dados.id} ${dados.name}</h4>
+   <p>${tipos}</p>
+   <p>Altura: ${dados.height / 10} m</p>
+   <p>Peso: ${dados.weight / 10} kg</p>
   `;
 }
 
