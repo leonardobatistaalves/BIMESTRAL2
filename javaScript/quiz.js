@@ -230,3 +230,45 @@ botaoJogarNovamente.addEventListener("click", () => {
 });
 
 mostrarPergunta();
+
+const formPokedex = document.querySelector('#form-pokedex');
+const buscaPokemon = document.querySelector('#busca-pokemon');
+const resultadoPokemon = document.querySelector('#resultado-pokemon');
+
+async function buscarPokemon(nome) {
+  resultadoPokemon.textContent = 'Carregando...';
+
+  const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${nome}`);
+
+  if (!resposta.ok) {
+    resultadoPokemon.textContent = 'Pokémon não encontrado!';
+    return;
+  }
+
+  const dados = await resposta.json();
+
+  let tipos = '';
+  for (let i = 0; i < dados.types.length; i++) {
+    if (i > 0) {
+      tipos = tipos + ', ';
+    }
+    tipos = tipos + dados.types[i].type.name;
+  }
+
+  resultadoPokemon.innerHTML = `
+    <img src="${dados.sprites.front_default}" alt="${dados.name}">
+    <h4>#${dados.id} ${dados.name}</h4>
+    <p>Tipo: ${tipos}</p>
+    <p>Altura: ${dados.height / 10} m</p>
+    <p>Peso: ${dados.weight / 10} kg</p>
+  `;
+}
+
+formPokedex.addEventListener('submit', (evento) => {
+  evento.preventDefault();
+  const nome = buscaPokemon.value.toLowerCase();
+
+  if (nome !== '') {
+    buscarPokemon(nome);
+  }
+});
