@@ -214,7 +214,7 @@ function embaralhar(lista) {
   return copia;
 }
 
-const perguntasDoJogo = embaralhar(perguntas);
+const perguntasDoJogo = embaralhar(perguntas).slice(0, 20);
 
 let indicePergunta = 0;
 let acertos = 0;
